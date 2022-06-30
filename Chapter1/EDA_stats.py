@@ -27,6 +27,7 @@ w_median = wquantiles.median(state['Murder.Rate'], weights = state['Population']
 
 print('Weighted Mean : {:,.2f}%'.format(w_mean))
 print('Weighted Median : {:,.2f}%'.format(w_median))
+print('\n')
 
 # Different ways of calculating the spread
 # calculate std with pandas
@@ -35,3 +36,6 @@ stand_d = state['Population'].std()
 IQR = state['Population'].quantile(0.75) - state['Population'].quantile(0.25)
 # MAD using statsmodels
 MAD = robust.scale.mad(state['Population'])
+print('Standard Deviation : {:,.2f}'.format(stand_d))
+print('IQR : {:,.2f}'.format(IQR))
+print('MAD : {:,.2f}'.format(MAD))
