@@ -32,6 +32,6 @@ print('Weighted Median : {:,.2f}%'.format(w_median))
 # calculate std with pandas
 stand_d = state['Population'].std()
 # IQR (Range of values between 75th percentile and 25th percentile) 
-IQR = state['Population'].quantile(75) - state['Population'].quantile(25)
+IQR = state['Population'].quantile(0.75) - state['Population'].quantile(0.25)
 # MAD using statsmodels
 MAD = robust.scale.mad(state['Population'])
